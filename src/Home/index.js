@@ -2,7 +2,7 @@ import React from 'react';
 
 import SupportEngine from '../SupportEngine';
 
-import './index.css';
+import './index.scss';
 
 const Home = () => {
   return (
