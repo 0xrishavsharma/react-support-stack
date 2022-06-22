@@ -1,14 +1,11 @@
 import React from 'react';
-
 import SupportEngine from '../SupportEngine';
-
 import './index.scss';
 
 const Home = () => {
   return (
     <div>
         <div dangerouslySetInnerHTML={{ __html: htmlCode }} ></div>
-
         <SupportEngine />
     </div>
   );
