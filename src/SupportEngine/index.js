@@ -8,12 +8,20 @@ const SupportEngine = () => {
     const[visible, setVisible] = useState(false)
     const ref = useRef(null);
 
-    function handleClickOutside (event){
-        if(ref.current && !ref.current.contains(event.target)){
-            setVisible(false);
+    useEffect(() => {
+        function handleClickOutside (event){
+            if(ref.current && !ref.current.contains(event.target)){
+                setVisible(false);
+            }
         }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('mousedown', handleClickOutside);
+    
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }, [ref])
+    
+    
 
     return (
         <div ref={ref}>
